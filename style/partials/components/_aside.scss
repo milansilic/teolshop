@@ -1,0 +1,119 @@
+.ul-display{
+    @include fl1 (column,null,null,center,null);
+    @media only screen and (min-width: $minTablet) {
+        align-items: flex-start;
+    }
+    &>*{
+        flex: 0 0 auto;
+    }
+}
+
+aside{
+    width: 100%;
+    font-family: $ff2;
+    padding-top: calc(70px + 10vw);
+    margin-bottom: 40px;
+    z-index: 1;
+    @media only screen and (min-width: $minTablet) {
+        width: 25vw;
+        padding-top: 124px;
+    }
+    @media only screen and (min-width: $minDesktop) {
+        width: 270px;
+    }
+
+    >nav{
+        @media only screen and (min-width: $minTablet) {
+            top: 60px;
+            padding-left: 20px;
+        }
+        @media only screen and (min-width: $minDesktop) {
+            padding-left: 26px;
+        }
+        
+        #aside-theme-title{
+            display: block;
+            color: #aaa;
+            font-weight: 700;
+            font-size: 15px;
+            text-align: center;
+            letter-spacing: 2px;
+            padding: 5px 0 1px 0;
+    
+            @media only screen and (min-width: $minTablet) {
+                font-size: 16px;
+                text-align: left;
+                letter-spacing: initial;
+                padding: 5px 0 5px 6px;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #aside-ul{
+            @extend .ul-display;
+            list-style-position: inside;
+            transition: all 1s ease;
+
+            li{
+                border: 1px solid $cBody;
+                border-radius: 6px;
+                color: $cb;
+                font-weight: 900;
+                font-size: 14px;
+                letter-spacing: 1.4px;
+                padding: 4px 8px 2px 4px;
+                margin: 1px 0;
+                transition: all .35s ease;
+                &:hover{
+                    cursor: pointer;
+                    transition: all .1s ease;
+                }
+                &:active{
+                    border: 1px solid $cBody;
+                    background-color: $cBody;
+                }
+                @media only screen and (min-width: $minTablet) {
+                    font-size: 1.6vw;
+                    letter-spacing: initial;
+                    margin: 3px 0;
+                    padding: 5px 8px 3px 4px;
+                }
+                @media only screen and (min-width: $minDesktop) {
+                    font-size: 16px;
+                }
+
+            }
+
+            #nonstyled-li{
+                margin: 0;
+                padding: 0;
+                cursor: initial;
+
+                #aside-ul-nested{
+                    @extend .ul-display;
+                    display: none;
+                    margin: 0;
+                    @media only screen and (min-width: $minTablet) {
+                        margin: 0 0 0 20px;
+                    }
+                
+                    li{
+                        color: #999;
+                    }   
+                }
+            }
+        }
+    }
+}
+
+.flexUl{
+    display: flex !important;
+}
+
+.fixedUl{
+    position: fixed;
+    width: 100px;
+}

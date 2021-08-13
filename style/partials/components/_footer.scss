@@ -1,0 +1,24 @@
+footer{
+    border-bottom: 7px solid $c1;
+    background-color: $cb;
+    color: $cg;
+    text-align: center;
+    padding: 30px 40px;
+    z-index: 2;
+    a{
+        color: $cg;
+        text-decoration: none;
+        font-family: $ff1;
+        font-size: 22px;
+        font-weight: 900;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .copy{
+        font-family: $ff2;
+        font-size: 14px;
+        line-height: 1.8;
+        padding-top: 40px;
+    }
+}

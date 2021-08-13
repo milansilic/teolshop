@@ -1,0 +1,41 @@
+@mixin fl1 ($flDi, $fW, $juCo, $aA, $aC){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	flex-flow: $flDi $fW;
+    justify-content: $juCo;
+    align-items: $aA;
+    align-content: $aC;   
+}
+
+@mixin bckImg ($bPos1, $bPos2, $bRep, $bSiz){
+    background-position: $bPos1 $bPos2;
+    background-repeat: $bRep;
+    background-size: $bSiz;
+}
+
+@mixin trans ($tProp, $tDur, $tTimFunc){
+    -webkit-transition: $tProp $tDur $tTimFunc;
+    -moz-transition: $tProp $tDur $tTimFunc;
+    -ms-transition: $tProp $tDur $tTimFunc;
+    -o-transition: $tProp $tDur $tTimFunc;
+    transition: $tProp $tDur $tTimFunc;   
+}
+
+@mixin bRadius($brValue){
+    -webkit-border-radius: $brValue;
+    -moz-border-radius: $brValue;
+    -o-border-radius: $brValue;
+    border-radius: $brValue;
+}
+
+body{
+    @include fl1(null, wrap, null, null, null);
+    background-color: #fafafa;
+    font-family: $ff1;
+    &>*{
+        width: 100%;
+    }
+}

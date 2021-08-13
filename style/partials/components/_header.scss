@@ -1,0 +1,75 @@
+
+body>header{
+    @include fl1(column,null,center,center,null);
+    position: fixed;
+    background-color: rgba(#fff, 1);
+    transition: all .2s ease-out;
+    z-index: 2;
+    @media only screen and (min-width: $minTablet) {
+        @include fl1(row,null,space-between,center,null);
+    }
+
+    #logoIm{
+        @include bckImg(center, center, no-repeat, 100%);
+        background-image: url("../../images/logo.png");
+        width: 205px; height: 54px;
+        transition: all .2s ease-out;
+    }
+
+    ul{
+        @include fl1(null,null,center,flex-start,null);
+        width:100%;
+        @media only screen and (min-width:$minTablet){
+            width: initial;
+        }
+
+        li{
+            width: 20%;
+            text-align: center;
+            @media only screen and (min-width:$minTablet){
+                width: initial;
+            }
+                       
+            >a{
+                display: block;
+                width: 100%;
+                font: 700 11px $ff1;
+                color: #b60011;
+                text-align: center;
+                @media only screen and (min-width: $minTablet) {
+                    font: 900 1.5vw $ff1;
+                    padding: 6px 1.9vw 2px 1.9vw;
+                    &:hover span{
+                        text-decoration: underline;
+                        text-decoration-thickness: 2px;
+                    }
+                }
+                @media only screen and (min-width: $minDesktop) {
+                    font: 900 15px $ff1;
+                }
+
+                img{
+                    display: block;
+                    width: 9vw;
+                    max-width: 58px;
+                    margin: 4px auto;
+                    @media only screen and (min-width: $minTablet) {
+                        display: none;
+                    }
+                }
+
+                span{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.disabled-link{
+    color: $cgL;
+    &:hover, &:hover span{ 
+        text-decoration: none !important;
+        cursor: unset;
+    }
+}

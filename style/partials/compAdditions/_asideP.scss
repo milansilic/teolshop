@@ -1,0 +1,12 @@
+.aside-li-hover{
+    @media only screen and (min-width: $minTablet) {
+        &:hover{
+            border: 1px solid rgba($c3, $alpha: .1);
+            background-color: rgba($c3, $alpha: .1);
+        }    
+    }
+}
+.selected{
+    border: 1px solid rgba($c3, $alpha: 1.0) !important;
+    background-color: rgba($c3, $alpha: .1);
+}

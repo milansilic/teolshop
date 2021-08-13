@@ -1,0 +1,50 @@
+main{border: 2px dotted brown;
+    width: initial;
+    flex-grow: 1;
+    padding: 120px 0 60px 0;
+    height: 2000px !important;
+}
+
+#main-landing{
+    display: grid;
+    grid-template-columns: 1fr 28vw 1fr 28vw 1fr;
+    padding: 60px 0 20px 0;
+    a{
+        @include bckImg(center, center, no-repeat, cover);
+        border-radius: 6vw;
+        height: 28vw;
+        transition: all .2s ease-in-out;
+        &:nth-of-type(1){
+            grid-column: 2;
+            border: 3vw solid $c2;
+            background-image: linear-gradient(rgba(255,181,97, 0.5), rgba(255,181,97, 0.5)), url('../../images/gifLion.gif');
+            &:hover{
+                border: 4vw solid $c2;
+            }
+        }
+        &:nth-of-type(2){
+            grid-column: 4;
+            border: 3vw solid $c3;
+            background-image: linear-gradient(rgba(0,204,187, 0.2), rgba(0,204,187, 0.2)), url('../../images/gifPositiva.gif');
+            &:hover{
+                border: 4vw solid $c3;
+            }
+        }
+    }
+    h1{
+        grid-row: 2;
+        color: $cb;
+        text-align: center;
+        padding: 2.8vw 0;
+        &:nth-of-type(1){
+            grid-column: 2;
+        }
+        &:nth-of-type(2){
+            grid-column: 4;
+        }
+    }
+}
+
+.msec{border: 1px dotted #bbb;
+    text-align: center;
+}
