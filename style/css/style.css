@@ -269,7 +269,6 @@ aside > nav #aside-ul #nonstyled-li #aside-ul-nested li {
 }
 
 main {
-  border: 2px dotted brown;
   width: initial;
   flex-grow: 1;
   padding: 120px 0 60px 0;
@@ -319,7 +318,6 @@ main {
 }
 
 .msec {
-  border: 1px dotted #bbb;
   text-align: center;
 }
 

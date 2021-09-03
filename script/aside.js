@@ -1,142 +1,97 @@
-// *** STYLE SELECTED li ELEMENTS *** //
+// *** STYLE SELECTED li's *** //
 var sideTitle = document.getElementById("aside-theme-title");
-var lis1 = document.querySelectorAll("#aside-ul > li");
-var lis2 = document.querySelectorAll("#aside-ul-nested > li");
+var listItems1 = document.querySelectorAll("#aside-ul > li");
+var listItems2 = document.querySelectorAll("#aside-ul-nested > li");
+var listItems1b = Array.from(listItems1);
 
-// exclude any li with id "nonstyled-li" from lis1
-var lis1Arr = Array.from(lis1);
-for (let i = 0; i < lis1Arr.length; i++) {
-    if(lis1Arr[i].id == "nonstyled-li"){lis1Arr.splice(i,1);}
+// MERGE all li's from 2 ul's
+var everySideLi = [...listItems1b, ...listItems2];
+
+// REMOVE unwanted li
+for (let y = 0; y < everySideLi.length; y++) {
+    if(everySideLi[y].id == "nonstyled-li"){everySideLi.splice(y,1);}
 }
 
-// merging all li's from 2 ul's, without unwanted li
-var allSideLis = [...lis1Arr, ...lis2];
+// adding HOVER style
+everySideLi.forEach(item => item.classList.add('aside-li-hover'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// *** OVO SVE NACINITI DA RADI I KAD SE SAS DRUGE STRANE DOLAZI NA DIJALOG
-
-// adding hover style
-allSideLis.forEach(item => item.classList.add('aside-li-hover'));
-
-// class "selected" reset
+// Class "selected" REMOVE from every LI, on aside title click
 sideTitle.addEventListener('click', ()=>{
-    for (let y = 0; y < allSideLis.length; y++) {
-        allSideLis[y].classList.remove("selected");
+    for (let y = 0; y < everySideLi.length; y++) {
+        everySideLi[y].classList.remove("selected");
     }
 });
 
-// class "selected" manipulation
-allSideLis.forEach(item => {item.addEventListener("click", ()=>{
-        for (let i = 0; i < allSideLis.length; i++) {
-            if(allSideLis[i].classList.contains("selected")){allSideLis[i].classList.remove("selected");}
-        }
-        item.classList.add("selected");
-    })
-});
+// Class "selected" REMOVE and ADD, on LI click
+everySideLi.forEach(item => item.addEventListener("click", ()=>{
+    for (let i = 0; i < everySideLi.length; i++) {
+        if(everySideLi[i].classList.contains("selected")){everySideLi[i].classList.remove("selected");}
+    }
+    item.classList.add("selected");
+}));
 
-// *** SHOW AND HIDE ELEMENTS *** //
-var nestedUlOpener = document.getElementById("nested-ul-opener");
-var nestedUl = document.getElementById("aside-ul-nested");
-// show and hide secondary ul
+
+// *** SHOW & HIDE ELEMENTS *** //
+var nestedUlOpener = document.getElementById("nested-ul-opener");   // li
+var nestedUl = document.getElementById("aside-ul-nested");          // ul
+var mainSecH = document.getElementsByClassName("main-sec-hidden");  // section hidden
+var mainSec = document.querySelector(".main-sec");                  // section visible
+var page = window.location.pathname.split("/").pop();               // name of current html file
+
+// show & hide nested ul
 nestedUlOpener.addEventListener("click", ()=>{
     nestedUl.classList.toggle("flexUl");
 });
 
-
-
-
-
-
-
-
-
-// ** OVO SREDITI
-
-var mainSecH = document.getElementsByClassName("main-sec-hidden");
-var mainSec = document.querySelector(".main-sec");
-
-// hide main sections
+// hide sections with class "main-sec-hidden"
 for (let i = 0; i < mainSecH.length; i++) {
     mainSecH[i].style.display = "none";
 }
 
-// show adequate main section
-//WHEN LI's ARE CLICKED
-for (let i = 0; i < allSideLis.length; i++) {
-    allSideLis[i].addEventListener('click', ()=>{   // KLIKOM NA SVAKI POEDINACNI li:
-        localStorage.setItem("item", i);    // -SETUJEMO NJHOV INDEX U localstorage - magija !!!
-        mainSec.style.display = "none";     // -BRISEMO NASLOV "DIJALOG" SVAKI PUT KAD KLIKNEMO li
-        Array.from(mainSecH).map(item => item.style.display = "none");
-        mainSecH[i].style.display = "block"; // -svaki section sakrivamo pa otkrivamo sa indexom kliknutog li-a
-        
-    }); 
+
+function toMainL(){
+    if (page != "mainL.html"){                      // if page is not mainL.html...
+        window.location.href = "mainL.html";        // ...go to page mainL.html    
+    }
 };
 
-// onclick WHEN LI's ARE CLICKED ON OTHER PAGES
-function test1(){
-    window.location.href = "mainL.html";
-}
+function toMainP(){
+    if (page != "mainP.html"){                      // if page is not mainP.html...
+        window.location.href = "mainP.html";        // ...go to page mainL.html    
+    }
+};
+
+for (let i = 0; i < everySideLi.length; i++) {          // for every side li...
+    everySideLi[i].addEventListener('click', ()=>{      // when clicked...
+        localStorage.setItem("item", i);                // set their index inside localstorage,
+        mainSec.style.display = "none";                 // hide default section,
+        Array.from(mainSecH).map(item => item.style.display = "none"); // hide every other sectioon
+        mainSecH[i].style.display = "block";            // show section with index of clicked button
+    });
+};
 
 // ONLOAD - prikazi "li" sa indexom setovanom u storage!!!
-addEventListener('load', ()=>{
-    var getItem = localStorage.getItem("item");
-    console.log("get item je " + getItem);
-    if(getItem !== null){
-        mainSecH[getItem].style.display = "block";
-        mainSec.style.display = "none";
-        allSideLis[getItem].classList.add("selected");
-        
-        nestedUl.classList.add("flexUl");
-    };
+if(page == "mainL.html" || page == "mainP.html"){
+    addEventListener('load', ()=>{
+        var getItem = localStorage.getItem("item");
+        if(getItem !== null){
+            mainSec.style.display = "none";
+            mainSecH[getItem].style.display = "block";
+            everySideLi[getItem].classList.add("selected");
+            if(everySideLi[getItem].classList.contains('nested-ul-opener')){
+                nestedUl.classList.add("flexUl");
+            }
+        };
+    });
+}
 
-});
-
-
-// local storage clear when clicked on DIJALOG
+// local storage clear, when clicked on DIJALOG
 function locStorageClear(){
     localStorage.clear();
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// *** POSITION aside *** //
+// *** aside POSITION *** //
 function asidePosition(){
     var sideNav = document.querySelector("aside>nav");
     if(matchMedia("(min-width: 768px)").matches){
