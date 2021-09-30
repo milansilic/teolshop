@@ -26,11 +26,9 @@ body {
   display: -webkit-flex;
   display: flex;
   flex-flow: wrap;
+  flex-wrap: wrap;
   background-color: #fafafa;
   font-family: "Josefin Sans";
-}
-body > * {
-  width: 100%;
 }
 
 body > header {
@@ -43,6 +41,7 @@ body > header {
   justify-content: center;
   align-items: center;
   position: fixed;
+  width: 100%;
   background-color: white;
   transition: all 0.2s ease-out;
   z-index: 2;
@@ -156,6 +155,7 @@ body > header ul li > a span {
 }
 
 aside {
+  border: px solid green;
   width: 100%;
   font-family: "Roboto";
   padding-top: calc(70px + 10vw);
@@ -164,7 +164,7 @@ aside {
 }
 @media only screen and (min-width: 768px) {
   aside {
-    width: 25vw;
+    width: 25%;
     padding-top: 124px;
   }
 }
@@ -269,10 +269,9 @@ aside > nav #aside-ul #nonstyled-li #aside-ul-nested li {
 }
 
 main {
-  width: initial;
+  border: px solid red;
   flex-grow: 1;
   padding: 120px 0 60px 0;
-  height: 2000px !important;
 }
 
 #main-landing {
@@ -318,7 +317,65 @@ main {
 }
 
 .msec {
+  border: px dotted lime;
+  padding: 40px 2vw 0 2vw;
   text-align: center;
+}
+.msec h1 {
+  border: px dotted #ccc;
+  color: #555;
+  margin-bottom: 42px;
+}
+.msec article.trigger {
+  border: px dotted lime;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0 60px 0;
+}
+@media only screen and (min-width: 768px) {
+  .msec article.trigger > * {
+    width: 33vw;
+  }
+}
+.msec article.trigger picture {
+  background-color: #ffac59;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .msec article.trigger picture {
+    order: 2;
+    max-width: 500px;
+  }
+}
+.msec article.trigger picture img {
+  width: 100%;
+  height: auto;
+}
+.msec article.trigger section {
+  border: px dotted blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+.msec article.trigger section > * {
+  width: 100%;
+  padding: 10px 1vw;
+}
+.msec article.trigger section h6 {
+  color: #ccc;
+  font-family: "Josefin Sans";
+  font-size: 17px;
+}
+.msec article.trigger section h2 {
+  color: #b60011;
+  font-weight: 900 !important;
+}
+.msec article.trigger section li {
+  font-weight: 500;
+  color: #555;
+  padding-bottom: 10px;
 }
 
 #mainSec {
@@ -402,6 +459,7 @@ main {
 }
 
 footer {
+  width: 100%;
   border-bottom: 7px solid #b60011;
   background-color: #555;
   color: #ccc;

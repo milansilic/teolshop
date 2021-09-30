@@ -8,14 +8,14 @@
     }
 }
 
-aside{
+aside{border: px solid green;
     width: 100%;
     font-family: $ff2;
     padding-top: calc(70px + 10vw);
     margin-bottom: 40px;
     z-index: 1;
     @media only screen and (min-width: $minTablet) {
-        width: 25vw;
+        width: 25%;
         padding-top: 124px;
     }
     @media only screen and (min-width: $minDesktop) {

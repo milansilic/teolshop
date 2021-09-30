@@ -1,8 +1,6 @@
-main{
-    width: initial;
-    flex-grow: 1;
+main{border: px solid red;
+    flex-grow: 1;    
     padding: 120px 0 60px 0;
-    height: 2000px !important;
 }
 
 #main-landing{
@@ -45,6 +43,70 @@ main{
     }
 }
 
-.msec{
+.msec{border: px dotted lime;
+    padding: 40px 2vw 0 2vw;
+    
     text-align: center;
+
+    h1{border: px dotted #ccc;
+        color: $cb;
+        margin-bottom: 42px;
+    }
+
+    article.trigger{border: px dotted lime;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 40px 0 60px 0;
+        @media only screen and(min-width:$minTablet){
+            &>*{
+                width: 33vw;
+            }        
+        }
+        
+
+        picture{
+            background-color: $c2;
+            overflow: hidden;
+            @media only screen and(min-width:$minTablet){
+                order: 2;
+                max-width: 500px;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        section{border: px dotted blue;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            &>*{
+                width: 100%;
+                padding: 10px 1vw;
+            }
+
+            h6{
+                color: $cg;
+                font-family: $ff1;
+                font-size: 17px;
+                // font-weight: 900 !important;
+            }
+
+            h2{
+                color: #b60011;
+                font-weight: 900 !important;
+            }
+
+            li{
+                // font-family: $ff4;
+                font-weight: 500;
+                color: $cb;
+                padding-bottom: 10px;
+            }
+        }
+    }
 }

@@ -33,9 +33,7 @@
 
 body{
     @include fl1(null, wrap, null, null, null);
+    flex-wrap: wrap;
     background-color: #fafafa;
     font-family: $ff1;
-    &>*{
-        width: 100%;
-    }
 }

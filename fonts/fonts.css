@@ -6,21 +6,20 @@
 @font-face {
     font-family: 'Roboto';
     src: url('Roboto-Regular.ttf') format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-Regular.ttf') format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat';
     src: url('Montserrat-Regular.ttf') format("truetype");
-    font-weight: 900;
-    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'Montserrat-Thin';
+    src: url('Montserrat-Thin.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('Montserrat-Light.ttf') format("truetype");
 }
