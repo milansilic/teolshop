@@ -1,6 +1,9 @@
-main{border: px solid red;
-    flex-grow: 1;    
-    padding: 120px 0 60px 0;
+main{
+    flex: 1 1 0px;
+    padding: 0px 0 60px 0;
+    @media only screen and(min-width:$minTablet){
+        padding: 120px 0 60px 0;
+    }
 }
 
 #main-landing{
@@ -43,14 +46,32 @@ main{border: px solid red;
     }
 }
 
-.msec{border: px dotted lime;
+.msec{border: px dotted blueviolet;
     padding: 40px 2vw 0 2vw;
-    
     text-align: center;
 
-    h1{border: px dotted #ccc;
+    h1{
         color: $cb;
         margin-bottom: 42px;
+    }
+    
+    &>p{border: px dotted green;
+        color: $cb;
+        font-family: $ff2;
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 1.5;
+        padding: 24px 6vw;
+    }
+
+    blockquote{border: px dotted green;
+        color: $cg;
+        font-family: $ff4;
+        font-size: 32px;
+        font-weight: 400;
+        font-style: italic;
+        padding: 12px 4vw;
+        
     }
 
     article.trigger{border: px dotted lime;
@@ -63,10 +84,8 @@ main{border: px solid red;
                 width: 33vw;
             }        
         }
-        
 
         picture{
-            background-color: $c2;
             overflow: hidden;
             @media only screen and(min-width:$minTablet){
                 order: 2;
@@ -79,7 +98,7 @@ main{border: px solid red;
             }
         }
 
-        section{border: px dotted blue;
+        section{
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -93,7 +112,6 @@ main{border: px solid red;
                 color: $cg;
                 font-family: $ff1;
                 font-size: 17px;
-                // font-weight: 900 !important;
             }
 
             h2{
@@ -102,7 +120,6 @@ main{border: px solid red;
             }
 
             li{
-                // font-family: $ff4;
                 font-weight: 500;
                 color: $cb;
                 padding-bottom: 10px;

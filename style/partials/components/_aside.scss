@@ -8,7 +8,7 @@
     }
 }
 
-aside{border: px solid green;
+aside{
     width: 100%;
     font-family: $ff2;
     padding-top: calc(70px + 10vw);
@@ -19,7 +19,7 @@ aside{border: px solid green;
         padding-top: 124px;
     }
     @media only screen and (min-width: $minDesktop) {
-        width: 270px;
+        width: 260px;
     }
 
     >nav{

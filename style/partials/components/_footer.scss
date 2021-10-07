@@ -1,5 +1,7 @@
 footer{
-    width: 100%;
+    // width: 100% !important;
+    
+    flex-basis: 100%;
     border-bottom: 7px solid $c1;
     background-color: $cb;
     color: $cg;

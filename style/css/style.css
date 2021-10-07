@@ -155,7 +155,6 @@ body > header ul li > a span {
 }
 
 aside {
-  border: px solid green;
   width: 100%;
   font-family: "Roboto";
   padding-top: calc(70px + 10vw);
@@ -170,7 +169,7 @@ aside {
 }
 @media only screen and (min-width: 1000px) {
   aside {
-    width: 270px;
+    width: 260px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -269,9 +268,13 @@ aside > nav #aside-ul #nonstyled-li #aside-ul-nested li {
 }
 
 main {
-  border: px solid red;
-  flex-grow: 1;
-  padding: 120px 0 60px 0;
+  flex: 1 1 0px;
+  padding: 0px 0 60px 0;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 120px 0 60px 0;
+  }
 }
 
 #main-landing {
@@ -317,14 +320,31 @@ main {
 }
 
 .msec {
-  border: px dotted lime;
+  border: px dotted blueviolet;
   padding: 40px 2vw 0 2vw;
   text-align: center;
 }
 .msec h1 {
-  border: px dotted #ccc;
   color: #555;
   margin-bottom: 42px;
+}
+.msec > p {
+  border: px dotted green;
+  color: #555;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1.5;
+  padding: 24px 6vw;
+}
+.msec blockquote {
+  border: px dotted green;
+  color: #ccc;
+  font-family: "Montserrat-Thin";
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 12px 4vw;
 }
 .msec article.trigger {
   border: px dotted lime;
@@ -339,7 +359,6 @@ main {
   }
 }
 .msec article.trigger picture {
-  background-color: #ffac59;
   overflow: hidden;
 }
 @media only screen and (min-width: 768px) {
@@ -353,7 +372,6 @@ main {
   height: auto;
 }
 .msec article.trigger section {
-  border: px dotted blue;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -459,7 +477,7 @@ main {
 }
 
 footer {
-  width: 100%;
+  flex-basis: 100%;
   border-bottom: 7px solid #b60011;
   background-color: #555;
   color: #ccc;
