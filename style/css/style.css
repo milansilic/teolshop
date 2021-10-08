@@ -339,7 +339,7 @@ main {
 }
 .msec blockquote {
   border: px dotted green;
-  color: #ccc;
+  color: #bfbfbf;
   font-family: "Montserrat-Thin";
   font-size: 32px;
   font-weight: 400;
@@ -382,7 +382,7 @@ main {
   padding: 10px 1vw;
 }
 .msec article.trigger section h6 {
-  color: #ccc;
+  color: #bfbfbf;
   font-family: "Josefin Sans";
   font-size: 17px;
 }
@@ -405,7 +405,7 @@ main {
 #mainSec h2 {
   border: px solid red;
   font-size: 22px;
-  color: #ccc;
+  color: #bfbfbf;
   margin: 10px 0 40px 0;
 }
 #mainSec .article-global {
@@ -428,7 +428,7 @@ main {
 }
 #mainSec .article-global h3::before {
   content: "Vaučer: ";
-  color: #ccc;
+  color: #bfbfbf;
   font-size: 17px;
   font-weight: 500;
 }
@@ -480,13 +480,13 @@ footer {
   flex-basis: 100%;
   border-bottom: 7px solid #b60011;
   background-color: #555;
-  color: #ccc;
+  color: #bfbfbf;
   text-align: center;
   padding: 30px 40px;
   z-index: 2;
 }
 footer a {
-  color: #ccc;
+  color: #bfbfbf;
   text-decoration: none;
   font-family: "Josefin Sans";
   font-size: 22px;
