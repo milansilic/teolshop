@@ -74,6 +74,32 @@ main{
         
     }
 
+    article.example{border: px solid grey;
+        border-radius: 5px;
+        width: 92%;
+        background-color: $cgL;
+        text-align: justify;
+        padding: 22px 3vw 16px 3vw;
+        margin: 0 auto;
+
+        &>*{
+            padding: 5px 0;
+        }
+
+        h4{border: px solid orangered;
+            color: $cb;
+            text-decoration: underline;
+        }
+        p{border: px solid grey;
+            color: $cb;
+            font-family: $ff2;
+            font-size: 17px;
+            font-weight: 100;
+            line-height: 1.5;
+            
+        }
+    }
+
     article.trigger{border: px dotted lime;
         display: flex;
         flex-wrap: wrap;
